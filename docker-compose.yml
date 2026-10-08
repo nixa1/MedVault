@@ -1,0 +1,12 @@
+services:
+  medvault:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      Jwt__Key: "change-this-secret-in-production"
+      ConnectionStrings__Default: "Data Source=/data/medvault.db"
+    volumes:
+      - medvault-data:/data
+volumes:
+  medvault-data:

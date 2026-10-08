@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MedVault — Pharmacy Inventory</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css?v=4" />
+  </head>
+  <body>
+    <div id="login" class="login-screen">
+      <div class="login-card">
+        <div class="brand">
+          <div class="brand-mark">
+            <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></svg>
+          </div>
+          <div>
+            <b>MedVault</b>
+            <small>Pharmacy inventory</small>
+          </div>
+        </div>
+
+        <h1>Welcome back</h1>
+        <p class="muted">Sign in to manage stock, deliveries and reports.</p>
+
+        <form id="loginForm">
+          <label>
+            Email
+            <input id="email" type="email" value="admin@medvault.local" autocomplete="username" required />
+          </label>
+          <label>
+            Password
+            <input id="password" type="password" value="Admin123!" autocomplete="current-password" required />
+          </label>
+          <p id="loginError" class="form-error"></p>
+          <button class="btn btn-primary btn-block" type="submit">Sign in</button>
+        </form>
+
+        <p class="hint">Demo account: admin@medvault.local / Admin123!</p>
+      </div>
+    </div>
+
+    <div id="app" class="app hidden">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">
+            <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></svg>
+          </div>
+          <div>
+            <b>MedVault</b>
+            <small>Pharmacy inventory</small>
+          </div>
+        </div>
+
+        <nav id="nav"></nav>
+
+        <div class="sidebar-bottom">
+          <a href="/swagger" target="_blank" class="side-link">API documentation</a>
+          <div class="user-box">
+            <div class="avatar" id="avatar">A</div>
+            <div class="user-info">
+              <b id="userName">Administrator</b>
+              <small id="userRole">Admin</small>
+            </div>
+            <button id="logout" class="icon-btn" title="Sign out">
+              <svg viewBox="0 0 24 24"><path d="M15 12H4m0 0 4-4m-4 4 4 4M14 4h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-5" /></svg>
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <main>
+        <header class="topbar">
+          <div>
+            <h2 id="pageTitle">Dashboard</h2>
+            <p id="pageSubtitle" class="muted"></p>
+          </div>
+          <div id="pageActions" class="page-actions"></div>
+        </header>
+        <div id="content" class="content"></div>
+      </main>
+    </div>
+
+    <div id="toasts" class="toasts"></div>
+
+    <script src="/app.js?v=4"></script>
+  </body>
+</html>
